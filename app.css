@@ -89,9 +89,6 @@ a {
 .block {
   display:block;
 }
-.bg-beige{
-  background-color:beige;
-}
 
 /* 커스텀 */
 :root {
@@ -190,10 +187,6 @@ a {
   border-radius:0 0 10px 10px;
 }
 /* 메뉴바 끝 */
-main > div{
- color :darkgray;
- 
-}
 
 /* 타이틀바 시작 */
 .title-bar {
