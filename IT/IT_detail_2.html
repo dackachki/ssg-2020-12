@@ -47,6 +47,7 @@
   <!-- 로고바 시작 -->
   <header class="logo-bar con-min-width">
   <script src="app.js"></script>
+  <script src="artilce_search.js"></script>
   <div>
 			<h1 id="clock">
 				
@@ -80,7 +81,7 @@
               <span>ARTICLES</span>
             </a>
             <ul>
-              <li><a href="../info/infolist-1.html" class = "block"><i class="fas fa-info"></i><span>info</span></a></li><li><a href="../IT/ITlist-1.html" class = "block"><i class="fas fa-wrench"></i><span>IT</span></a></li> 
+              <li><a href="../info/infolist-1.html" class = "block"><i class="fas fa-info"></i><span>info</span></a></li><li><a href="../IT/ITlist-1.html" class = "block"><i class="fas fa-wrench"></i><span>IT</span></a></li><li><a href="../JSP/JSPlist-1.html" class = "block"><span>JSP</span></a></li> 
             </ul>
           </li>
           <li>
@@ -109,6 +110,13 @@
               <span>STATISTICS</span>
             </a>
           </li>
+           <li>
+            <a href="search.html" class="block">
+              <i class="fas fa-search"></i>
+              <span>Search</span>
+            </a>
+          </li>
+          	
         </ul>
       </nav>
     </div>
@@ -133,9 +141,9 @@
 <!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
 <script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
 
-  <main class="flex-grow-1 mainbg">
+  <div class="flex-grow-1 mainbg main">
     <section class="title-bar con-min-width">
-     	<section class ="title-bar con-min-width"><h1 class="con"><i class="fas fa-wrench"></i>IT게시판  2번 게시물</h1><div class="con">
+     	<section class ="title-bar con-min-width"><h1 class="con"><i class="fas fa-wrench"></i>IT게시판  2번 게시물</h1><div class="con"></section>
     
         
 <section class="section-1 con-min-width">
@@ -151,7 +159,14 @@
 				<div class="article_body_hit">조회수:4</div>
 				
 			</div>
+				<div class="tag">
+      	<i class="fas fa-tags"></i>
+      		Tag:
+      			<a href="">#Java</a>&nbsp;
+<a href="">#자바</a>&nbsp;
+<a href="">#형변환</a>&nbsp;
 
+      	</div>
 			<div class="article_body_body"># Java 20-12-17
 ## Java 2강
 - String to Int, Int to String
@@ -190,9 +205,9 @@ Int b;
 	
       
 
-<div class="below_button flex"><div><a href="IT_1.html">&lt; 이 전 글</a></div>
-<div><a href="IT_6.html">다 음 글 &gt;</a></div><div><a href="ITlist-1.html">목 록</a></div>
-</div></div></section></main>
+<div class="below_button flex"><div><a href="IT_detail_1.html">&lt; 이 전 글</a></div>
+<div><a href="IT_detail_6.html">다 음 글 &gt;</a></div><div><a href="ITlist-1.html">목 록</a></div>
+</div></div></section></main></div></section>
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c">
 		<a href="#" class="logo logo--mini flex flex-ai-c">

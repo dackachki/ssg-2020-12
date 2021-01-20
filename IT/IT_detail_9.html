@@ -47,6 +47,7 @@
   <!-- 로고바 시작 -->
   <header class="logo-bar con-min-width">
   <script src="app.js"></script>
+  <script src="artilce_search.js"></script>
   <div>
 			<h1 id="clock">
 				
@@ -80,7 +81,7 @@
               <span>ARTICLES</span>
             </a>
             <ul>
-              <li><a href="../info/infolist-1.html" class = "block"><i class="fas fa-info"></i><span>info</span></a></li><li><a href="../IT/ITlist-1.html" class = "block"><i class="fas fa-wrench"></i><span>IT</span></a></li> 
+              <li><a href="../info/infolist-1.html" class = "block"><i class="fas fa-info"></i><span>info</span></a></li><li><a href="../IT/ITlist-1.html" class = "block"><i class="fas fa-wrench"></i><span>IT</span></a></li><li><a href="../JSP/JSPlist-1.html" class = "block"><span>JSP</span></a></li> 
             </ul>
           </li>
           <li>
@@ -109,6 +110,13 @@
               <span>STATISTICS</span>
             </a>
           </li>
+           <li>
+            <a href="search.html" class="block">
+              <i class="fas fa-search"></i>
+              <span>Search</span>
+            </a>
+          </li>
+          	
         </ul>
       </nav>
     </div>
@@ -133,9 +141,9 @@
 <!-- 토스트 UI 에디터, 신택스 하이라이트 플러그인 추가 -->
 <script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
 
-  <main class="flex-grow-1 mainbg">
+  <div class="flex-grow-1 mainbg main">
     <section class="title-bar con-min-width">
-     	<section class ="title-bar con-min-width"><h1 class="con"><i class="fas fa-wrench"></i>IT게시판  9번 게시물</h1><div class="con">
+     	<section class ="title-bar con-min-width"><h1 class="con"><i class="fas fa-wrench"></i>IT게시판  9번 게시물</h1><div class="con"></section>
     
         
 <section class="section-1 con-min-width">
@@ -151,7 +159,14 @@
 				<div class="article_body_hit">조회수:3</div>
 				
 			</div>
+				<div class="tag">
+      	<i class="fas fa-tags"></i>
+      		Tag:
+      			<a href="">#MySQL</a>&nbsp;
+<a href="">#Sqlyog</a>&nbsp;
+<a href="">#이모티콘</a>&nbsp;
 
+      	</div>
 			<div class="article_body_body">🥶😳🤪😵😡😠🥵
 이모티콘을 사용하기 위해서 utf-8이 아닌 utf8mb4으로 인코딩이 필요하다.
 사용중인 sqlylog은 기본적으로 utf-8을 사용하기 떄문에 
@@ -185,9 +200,9 @@ client의 charset을 서버의 것으로 동기화를 시켜 매번 바꿔줘야
 	
       
 
-<div class="below_button flex"><div><a href="IT_6.html">&lt; 이 전 글</a></div>
-<div><a href="IT_10.html">다 음 글 &gt;</a></div><div><a href="ITlist-1.html">목 록</a></div>
-</div></div></section></main>
+<div class="below_button flex"><div><a href="IT_detail_6.html">&lt; 이 전 글</a></div>
+<div><a href="IT_detail_10.html">다 음 글 &gt;</a></div><div><a href="ITlist-1.html">목 록</a></div>
+</div></div></section></main></div></section>
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c">
 		<a href="#" class="logo logo--mini flex flex-ai-c">
