@@ -143,77 +143,83 @@
 
   <div class="flex-grow-1 mainbg main">
     <section class="title-bar con-min-width">
-     	 <section class="title-bar con-min-width">
-      <h1 class="con">
-<i class="fas fa-wrench"></i>        <span>IT게시판</span>
-      </h1>
-    </section>
+     	<section class ="title-bar con-min-width"><h1 class="con"><i class="fas fa-wrench"></i>IT게시판  13번 게시물</h1><div class="con"></section>
     
-        <section class="section-1 con-min-width"><div class="con">
-<div class="article-list"><header><div><div class="article-list__cell-id">번호</div>
- <div class="article-list__cell-reg-date">날짜</div>
-<div class="article-list__cell-writer">작성자</div>
-<div class="article-list__cell-title">제목</div>
-</div>
-</header>
-<main><div>
-<div class="article-list__cell-id">13</div>
-<div class="article-list__cell-reg-date">2021-01-25 15:28:26</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="IT_detail_13.html">JAVA Map으로 받을때 자료형 캐스팅 에러시
-</a></div>
-</div><div>
-<div class="article-list__cell-id">11</div>
-<div class="article-list__cell-reg-date">2021-01-04 19:14:01</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="IT_detail_11.html">Vue Computed를 사용한 더하기 구현
-</a></div>
-</div><div>
-<div class="article-list__cell-id">10</div>
-<div class="article-list__cell-reg-date">2020-12-29 22:44:57</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="IT_detail_10.html">Java & JavaScript
-</a></div>
-</div><div>
-<div class="article-list__cell-id">9</div>
-<div class="article-list__cell-reg-date">2020-12-22 18:27:15</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="IT_detail_9.html">이모티콘 추가
-</a></div>
-</div><div>
-<div class="article-list__cell-id">6</div>
-<div class="article-list__cell-reg-date">2020-12-21 12:11:34</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="IT_detail_6.html">Java 3회
-</a></div>
-</div><div>
-<div class="article-list__cell-id">2</div>
-<div class="article-list__cell-reg-date">2020-12-17 14:08:31</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="IT_detail_2.html">Java 2회
-</a></div>
-</div><div>
-<div class="article-list__cell-id">1</div>
-<div class="article-list__cell-reg-date">2020-12-17 13:43:36</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="IT_detail_1.html">Java 1회
-</a></div>
-</div><div class="hyperlink_page"><ul><br><li>
-<a href = "ITlist-1.html">1</a>
-</li>
-</li></ul>
-</div>
-</div></main>
-</section></div>
-</main></div>
-</section></main>
+        
+<section class="section-1 con-min-width">
+	<div class="con">
+		<div class="article_body">
+			<h2 class="article_body_title">제목: JAVA Map으로 받을때 자료형 캐스팅 에러시</h2>
+
+			<div class="article_body_sub-info flex">
+				<div class ="article_body_Id">게시물 번호: 13&nbsp;&nbsp;</div>
+				<div class="article_body_board-name">게사판: IT&nbsp;&nbsp;</div>
+				<div class="article_body_reg-date">등록일 : 2021-01-25 15:28:26&nbsp;&nbsp;</div>
+				<div class="article_body_writer">작성자: admin&nbsp;&nbsp;</div>
+				<div class="article_body_hit">조회수:0</div>
+				
+			</div>
+				<div class="tag">
+      	<i class="fas fa-tags"></i>
+      		Tag:
+      			<a href="">#JAVA</a>&nbsp;
+<a href="">#캐스팅에러</a>&nbsp;
+<a href="">#에러노트</a>&nbsp;
+
+      	</div>
+			<div class="article_body_body"># JAVA
+
+## Casting 에러
+
+ - 커뮤니티에서 핸드폰 번호를 입력 받고 DB 저장 후 다시 불러오는데
+```java
+   class java.lang.Integer cannot be cast to class java.lang.String
+   (java.lang.Integer and java.lang.String are in module java.base of loader 'bootstrap')
+ ```
+    오류가 발생하였다. object형이 아니라 정수형으로 받아오는가보다
+    아래와 같이 변경하였더니 오류는 사라졌다.
+
+```java
+    this.cellphoneNo = (String)map.get("cellphoneNo");
+
+    this.cellphoneNo = String.valueOf(map.get("cellphoneNo")); 
+```
+    모두 String,Object형인데 왜 핸드폰 번호만 그런지는 모르겠다만..
+    
+    
+
+    [출처](https://javamin.tistory.com/369)
+  </div>
+			
+				<div class="article-detail__reply-box">
+				<div id="disqus_thread"></div>
+				<script>
+					(function() { // DON'T EDIT BELOW THIS LINE
+						var d = document, s = d.createElement('script');
+						s.src = 'https://nsw-blog.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+					})();
+				</script>
+				<noscript>
+					Please enable JavaScript to view the
+					<a href="https://disqus.com/?ref_noscript">comments powered by
+						Disqus.</a>
+				</noscript>
+			</div>
+
+
+<script src="app.js"></script>
+<script id="dsq-count-scr" src="//nsw-blog.disqus.com/count.js" async></script>
         
 
       
 	
       
 
-
+<div class="below_button flex"><div><a href="IT_detail_11.html">&lt; 이 전 글</a></div>
+<div><a href="ITlist-1.html">목 록</a></div>
+</div></div></section></main></div></section>
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c">
 		<a href="#" class="logo logo--mini flex flex-ai-c">
