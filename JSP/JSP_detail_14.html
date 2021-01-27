@@ -125,37 +125,48 @@
 			src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
 
 		<div class="flex-grow-1 mainbg main">
-			<section class="title-bar con-min-width"><section class ="title-bar con-min-width"><h1 class="con"><i class="fas fa-wrench"></i>IT게시판  10번 게시물</h1><div class="con"></section>
+			<section class="title-bar con-min-width"><section class ="title-bar con-min-width"><h1 class="con"><i class="fas fa-comments"></i>JSP게시판  14번 게시물</h1><div class="con"></section>
 
 				
 <section class="section-1 con-min-width">
 	<div class="con">
 		<div class="article_body">
-			<h2 class="article_body_title">제목: Java & JavaScript</h2>
+			<h2 class="article_body_title">제목: JAVA 올림(ceil) 적용이 안될때</h2>
 
 			<div class="article_body_sub-info flex">
-				<div class ="article_body_Id">게시물 번호: 10&nbsp;&nbsp;</div>
-				<div class="article_body_board-name">게사판: IT&nbsp;&nbsp;</div>
-				<div class="article_body_reg-date">등록일 : 2020-12-29 22:44:57&nbsp;&nbsp;</div>
+				<div class ="article_body_Id">게시물 번호: 14&nbsp;&nbsp;</div>
+				<div class="article_body_board-name">게사판: JSP&nbsp;&nbsp;</div>
+				<div class="article_body_reg-date">등록일 : 2021-01-27 10:30:18&nbsp;&nbsp;</div>
 				<div class="article_body_writer">작성자: admin&nbsp;&nbsp;</div>
-				<div class="article_body_hit">조회수:4</div>
+				<div class="article_body_hit">조회수:0</div>
 				
 			</div>
 				<div class="tag">
       	<i class="fas fa-tags"></i>
       		Tag:
-      			<a href="">#Java</a>&nbsp;
-<a href="">#자바</a>&nbsp;
-<a href="">#JavaScript</a>&nbsp;
+      			<a href="">#JAVA</a>&nbsp;
+<a href="">#커뮤니티</a>&nbsp;
+<a href="">#에러노트</a>&nbsp;
 
       	</div>
-			<div class="article_body_body"># Java 20-12-29
+			<div class="article_body_body"># Java
 
-## Java와 JavaScript
+## 문제 발생
+ - 게시판 페이지를 슬라이스 하는 중
+   전체 게시글 배열 / 한 페이지 표시 수로 계산하는데
+   페이지 수 올림이 적용되지 않음.
+   블로그 제작떄도 같은 문제가 있었으나 블로그와 구조가 다르므로 
+   적용 할 수가 없음.
 
- - 이름이 비슷하여 서로 관련이 있을 줄 알았지만
-    전혀 별개의 언어이며 Java는 서버측 JavaScript는 클라이언트측 언어로
-    구분하며 Node.js를 사용하면 JavaScript로도 서버개발이 가능하다고 한다.</div>
+## 문제 해결
+ - 정수 / 정수  = 정수.0
+ ex)  13/10 = 1.0
+ 그래서 분자와 분모 모두 int가 아닌 double이여야
+ 결과 값도 소수점을 포함하여 나옴.
+ 나온 double 값은 올림하면 정상적으로 1이 아닌 2가 출력됨 확인 
+
+ - [출처](https://okky.kr/article/73390)
+ </div>
 			
 				<div class="article-detail__reply-box">
 				<div id="disqus_thread"></div>
@@ -176,8 +187,8 @@
 
 
 <script src="app.js"></script>
-<script id="dsq-count-scr" src="//nsw-blog.disqus.com/count.js" async></script><div class="below_button flex"><div><a href="IT_detail_9.html">&lt; 이 전 글</a></div>
-<div><a href="IT_detail_11.html">다 음 글 &gt;</a></div><div><a href="ITlist-1.html">목 록</a></div>
+<script id="dsq-count-scr" src="//nsw-blog.disqus.com/count.js" async></script><div class="below_button flex"><div><a href="JSP_detail_12.html">&lt; 이 전 글</a></div>
+<div><a href="JSPlist-1.html">목 록</a></div>
 </div></div></section></main></div></section>
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c">
