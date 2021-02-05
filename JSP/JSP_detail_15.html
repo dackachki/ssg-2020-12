@@ -125,18 +125,18 @@
 			src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
 
 		<div class="flex-grow-1 mainbg main">
-			<section class="title-bar con-min-width"><section class ="title-bar con-min-width"><h1 class="con"><i class="fas fa-comments"></i>JSP게시판  14번 게시물</h1><div class="con"></section>
+			<section class="title-bar con-min-width"><section class ="title-bar con-min-width"><h1 class="con"><i class="fas fa-comments"></i>JSP게시판  15번 게시물</h1><div class="con"></section>
 
 				
 <section class="section-1 con-min-width">
 	<div class="con">
 		<div class="article_body">
-			<h2 class="article_body_title">제목: JAVA 올림(ceil) 적용이 안될때</h2>
+			<h2 class="article_body_title">제목: JSP 좋아요&싫어요 추가 및 취소</h2>
 
 			<div class="article_body_sub-info flex">
-				<div class ="article_body_Id">게시물 번호: 14&nbsp;&nbsp;</div>
+				<div class ="article_body_Id">게시물 번호: 15&nbsp;&nbsp;</div>
 				<div class="article_body_board-name">게사판: JSP&nbsp;&nbsp;</div>
-				<div class="article_body_reg-date">등록일 : 2021-01-27 10:30:18&nbsp;&nbsp;</div>
+				<div class="article_body_reg-date">등록일 : 2021-02-05 20:36:15&nbsp;&nbsp;</div>
 				<div class="article_body_writer">작성자: admin&nbsp;&nbsp;</div>
 				<div class="article_body_hit">조회수:0</div>
 				
@@ -144,29 +144,70 @@
 				<div class="tag">
       	<i class="fas fa-tags"></i>
       		Tag:
-      			<a href="">#JAVA</a>&nbsp;
-<a href="">#커뮤니티</a>&nbsp;
-<a href="">#에러노트</a>&nbsp;
+      			<a href="">#JSP</a>&nbsp;
+<a href="">#제작일지</a>&nbsp;
+<a href="">#설명</a>&nbsp;
 
       	</div>
-			<div class="article_body_body"># Java
+			<div class="article_body_body"># JSP
 
-## 문제 발생
- - 게시판 페이지를 슬라이스 하는 중
-   전체 게시글 배열 / 한 페이지 표시 수로 계산하는데
-   페이지 수 올림이 적용되지 않음.
-   블로그 제작떄도 같은 문제가 있었으나 블로그와 구조가 다르므로 
-   적용 할 수가 없음.
+## 좋아요 및 싫어요 추가 취소
+ - article 컨트롤러 및 UsrServlet에 addLike,addDisLike,removeLike,removeDisLike 추가
 
-## 문제 해결
- - 정수 / 정수  = 정수.0
- ex)  13/10 = 1.0
- 그래서 분자와 분모 모두 int가 아닌 double이여야
- 결과 값도 소수점을 포함하여 나옴.
- 나온 double 값은 올림하면 정상적으로 1이 아닌 2가 출력됨 확인 
+--------------------------------------------------------------------------------------------------------------------
 
- - [출처](https://okky.kr/article/73390)
- </div>
+ - add와 remove로 구분하여 공통적으로 memberId,articleId,relTypeCode,likeOrNot를 넘기고 
+    likeOrNot을 통해 like로 들어오면 1 dislike로 들어오면 0을 넘기게 하여 구분토록 함.
+    Dao에서 likeOrNot을 받아  if문으로 like로 넣을지 dislike로 넣을지 구분하여 실행함.
+
+	--------------------------------------------------------------------------------------------------------------------
+
+ - detail JSP에서는 c:if문으로 로그인이 되어야만 좋아요/싫어요 버튼이 나타나며
+   이 if문 안에 4개의 케이스를 모두 대응하는 4개의 c:if문을 만들어 좋아요/싫어요 와 
+   좋아요 취소/ 싫어요 취소를 나타나게 함.
+ 
+   --------------------------------------------------------------------------------------------------------------------
+				
+```JSP
+<c:if test="${sessionScope.loginedMemberId > 0}">
+
+			<c:if test="${isLiked == true }">
+
+				<button
+					onclick="location.href='addLike?articleId=${article.getId()}'">
+					좋아요 <i class="fas fa-thumbs-up"></i>
+				</button>
+			</c:if>
+			<c:if test="${isLiked == false }">
+				<button
+					onclick="location.href='removeLike?articleId=${article.getId()}'">
+					좋아요 취소 <i class="fas fa-thumbs-up"></i>
+				</button>
+			</c:if>
+			<c:if test="${isDisliked == true }">
+
+				<button
+					onclick="location.href='addDislike?articleId=${article.getId()}'">
+					싫어요 <i class="fas fa-thumbs-down"></i>
+				</button>
+			</c:if>
+
+				<c:if test="${isDisliked == false }">
+
+				<button
+					onclick="location.href='removeDislike?articleId=${article.getId()}'">
+					싫어요 취소 <i class="fas fa-thumbs-down"></i>
+				</button>
+			</c:if>
+
+
+		</c:if>
+```
+
+ 마무리
+
+ - 나름대로 머리 굴려가며 만들긴 했는데 뭔가 원시적인거 같은 느낌이 든다.
+   like를 dto,service로 만드는게 더 좋을런지..</div>
 			
 				<div class="article-detail__reply-box">
 				<div id="disqus_thread"></div>
@@ -187,8 +228,8 @@
 
 
 <script src="app.js"></script>
-<script id="dsq-count-scr" src="//nsw-blog.disqus.com/count.js" async></script><div class="below_button flex"><div><a href="JSP_detail_12.html">&lt; 이 전 글</a></div>
-<div><a href="JSP_detail_15.html">다 음 글 &gt;</a></div><div><a href="JSPlist-1.html">목 록</a></div>
+<script id="dsq-count-scr" src="//nsw-blog.disqus.com/count.js" async></script><div class="below_button flex"><div><a href="JSP_detail_14.html">&lt; 이 전 글</a></div>
+<div><a href="JSPlist-1.html">목 록</a></div>
 </div></div></section></main></div></section>
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c">
