@@ -154,20 +154,14 @@
 ## 좋아요 및 싫어요 추가 취소
  - article 컨트롤러 및 UsrServlet에 addLike,addDisLike,removeLike,removeDisLike 추가
 
---------------------------------------------------------------------------------------------------------------------
-
  - add와 remove로 구분하여 공통적으로 memberId,articleId,relTypeCode,likeOrNot를 넘기고 
     likeOrNot을 통해 like로 들어오면 1 dislike로 들어오면 0을 넘기게 하여 구분토록 함.
     Dao에서 likeOrNot을 받아  if문으로 like로 넣을지 dislike로 넣을지 구분하여 실행함.
-
-	--------------------------------------------------------------------------------------------------------------------
 
  - detail JSP에서는 c:if문으로 로그인이 되어야만 좋아요/싫어요 버튼이 나타나며
    이 if문 안에 4개의 케이스를 모두 대응하는 4개의 c:if문을 만들어 좋아요/싫어요 와 
    좋아요 취소/ 싫어요 취소를 나타나게 함.
  
-   --------------------------------------------------------------------------------------------------------------------
-				
 ```JSP
 <c:if test="${sessionScope.loginedMemberId > 0}">
 
@@ -229,7 +223,7 @@
 
 <script src="app.js"></script>
 <script id="dsq-count-scr" src="//nsw-blog.disqus.com/count.js" async></script><div class="below_button flex"><div><a href="JSP_detail_14.html">&lt; 이 전 글</a></div>
-<div><a href="JSPlist-1.html">목 록</a></div>
+<div><a href="JSP_detail_16.html">다 음 글 &gt;</a></div><div><a href="JSPlist-1.html">목 록</a></div>
 </div></div></section></main></div></section>
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c">

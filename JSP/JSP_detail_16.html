@@ -78,7 +78,7 @@
 					</a></li>
 					<li><a class="block"> <i class="fas fa-list"></i> <span>ARTICLES</span>
 					</a>
-						<ul><li><a href="../Info/Infolist-1.html" class = "block"><i class="fas fa-info"></i><span>InfoBoard</span></a></li><li><a href="../IT/ITlist-1.html" class = "block"><i class="fas fa-wrench"></i><span>ITBoard</span></a></li><li><a href="../JSP/JSPlist-1.html" class = "block"><i class="fas fa-comments"></i><span>JSPBoard</span></a></li>
+						<ul><li><a href="../Info/Infolist-1.html" class = "block"><i class="fas fa-info"></i><span>Info</span></a></li><li><a href="../IT/ITlist-1.html" class = "block"><i class="fas fa-wrench"></i><span>IT</span></a></li><li><a href="../JSP/JSPlist-1.html" class = "block"><i class="fas fa-comments"></i><span>JSP</span></a></li>
 						</ul></li>
 					<li><a class="block"> <i class="fas fa-link"></i> <span>LINK</span>
 					</a>
@@ -125,52 +125,89 @@
 			src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
 
 		<div class="flex-grow-1 mainbg main">
-			<section class="title-bar con-min-width"> <section class="title-bar con-min-width">
-      <h1 class="con">
-<i class="fas fa-comments"></i>        <span>JSP게시판</span>
-      </h1>
-    </section>
+			<section class="title-bar con-min-width"><section class ="title-bar con-min-width"><h1 class="con"><i class="fas fa-comments"></i>JSP게시판  16번 게시물</h1><div class="con"></section>
 
-				<section class="section-1 con-min-width"><div class="con">
-<div class="article-list"><header><div><div class="article-list__cell-id">번호</div>
- <div class="article-list__cell-reg-date">날짜</div>
-<div class="article-list__cell-writer">작성자</div>
-<div class="article-list__cell-title">제목</div>
-</div>
-</header>
-<main><div>
-<div class="article-list__cell-id">16</div>
-<div class="article-list__cell-reg-date">2021-02-09 17:54:08</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="JSP_detail_16.html">JSP localStorage를 이용한 조회수 반영
-</a></div>
-</div><div>
-<div class="article-list__cell-id">15</div>
-<div class="article-list__cell-reg-date">2021-02-05 20:36:15</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="JSP_detail_15.html">JSP 좋아요&싫어요 추가 및 취소
-</a></div>
-</div><div>
-<div class="article-list__cell-id">14</div>
-<div class="article-list__cell-reg-date">2021-01-27 10:30:18</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="JSP_detail_14.html">JAVA 올림(ceil) 적용이 안될때
-</a></div>
-</div><div>
-<div class="article-list__cell-id">12</div>
-<div class="article-list__cell-reg-date">2021-01-20 18:01:16</div>
-<div class="article-list__cell-writer">admin</div>
-<div class="article-list__cell-title"><a href="JSP_detail_12.html">JSP 제작일지(회원가입,로그인,CRUD 권한체크)
-</a></div>
-</div><div class="hyperlink_page"><ul><br><li>
-<a href = "JSPlist-1.html">1</a>
-</li>
-</li></ul>
-</div>
-</div></main>
-</section></div>
-</main></div>
-</section></main>
+				
+<section class="section-1 con-min-width">
+	<div class="con">
+		<div class="article_body">
+			<h2 class="article_body_title">제목: JSP localStorage를 이용한 조회수 반영</h2>
+
+			<div class="article_body_sub-info flex">
+				<div class ="article_body_Id">게시물 번호: 16&nbsp;&nbsp;</div>
+				<div class="article_body_board-name">게사판: JSP&nbsp;&nbsp;</div>
+				<div class="article_body_reg-date">등록일 : 2021-02-09 17:54:08&nbsp;&nbsp;</div>
+				<div class="article_body_writer">작성자: admin&nbsp;&nbsp;</div>
+				<div class="article_body_hit">조회수:0</div>
+				
+			</div>
+				<div class="tag">
+      	<i class="fas fa-tags"></i>
+      		Tag:
+      			<a href="">#JSP</a>&nbsp;
+<a href="">#커뮤니티</a>&nbsp;
+<a href="">#조회수</a>&nbsp;
+
+      	</div>
+			<div class="article_body_body"># JSP
+
+## localStorage를 사용한 조회수 증가
+
+ - 현재 상세글 창에서 새로고침하면 조회수가 증가하는 상황을
+   web storage를 사용하여 무조건 올라가는 상황을 방지 하고자 함.
+
+```html
+function article_Hits(){
+		localStorage.setItem("hits", true);
+		$.ajax({
+		    url: "articlehits",
+		    type: "GET",
+		    data: {"hits": "true","articleId":"${articleId}"},
+		    success: function (data) {
+						localStorage.setItem("Updated",true);	            
+		        }
+		});
+					
+		}
+		if(localStorage.getItem("Updated",true)){
+			setTimeout(function(){alert("asdasdasd")}, 5000);
+			localStorage.removeItem("Updated")
+				}
+		
+		
+		else {
+			setTimeout(function(){article_Hits()}, 5000);
+			}
+	
+```
+
+   - 완성형은 아니고 일단 5초 후에 ajax를 통해 hits 값이 true로 넘어가게 해서 
+    Java 로직에 의해 조회수를 증가시키긴 했는데 localStorage에는 expire time이 없어서 
+    어떻게 적용해야될지는 아직 정해지지 않음 setinterval로 하기도 애매한 부분이 있는거 같고..
+    추후에 expire time이 적용되면 그 부분은 다시 포스팅을 할 예정</div>
+			
+				<div class="article-detail__reply-box">
+				<div id="disqus_thread"></div>
+				<script>
+					(function() { // DON'T EDIT BELOW THIS LINE
+						var d = document, s = d.createElement('script');
+						s.src = 'https://nsw-blog.disqus.com/embed.js';
+						s.setAttribute('data-timestamp', +new Date());
+						(d.head || d.body).appendChild(s);
+					})();
+				</script>
+				<noscript>
+					Please enable JavaScript to view the
+					<a href="https://disqus.com/?ref_noscript">comments powered by
+						Disqus.</a>
+				</noscript>
+			</div>
+
+
+<script src="app.js"></script>
+<script id="dsq-count-scr" src="//nsw-blog.disqus.com/count.js" async></script><div class="below_button flex"><div><a href="JSP_detail_15.html">&lt; 이 전 글</a></div>
+<div><a href="JSPlist-1.html">목 록</a></div>
+</div></div></section></main></div></section>
 <footer class="bottom-bar con-min-width">
 	<div class="con flex flex-ai-c">
 		<a href="#" class="logo logo--mini flex flex-ai-c">
